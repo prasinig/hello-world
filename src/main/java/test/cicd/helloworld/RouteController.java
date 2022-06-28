@@ -8,6 +8,6 @@ public class RouteController {
 
     @GetMapping("/")
     public String index() {
-        return "Hello World";
+        return "Hello World (V2)";
     }
 }
