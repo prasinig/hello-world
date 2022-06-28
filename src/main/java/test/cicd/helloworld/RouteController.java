@@ -12,6 +12,7 @@ public class RouteController {
         return """
                 <div style='text-align: center;'>
                 	<h1 >Hello World (V3)</h1>
+                	<img  src="https://miro.medium.com/max/1224/1*t6AoYmibARPlaJejcrrZEg.png"  >
                 	<p>Welcome to the world of automation</p>
                 </div>
                 """;
@@ -19,6 +20,6 @@ public class RouteController {
 
     @GetMapping("health")
     public Health health() {
-        return new Health("OK", "This is a fake Health end point");
+        return new Health("OK", "This is a fake Health end point. This should be replaced by Actuator or similar package.");
     }
 }
