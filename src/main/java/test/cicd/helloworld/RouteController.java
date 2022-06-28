@@ -9,11 +9,16 @@ public class RouteController {
 
     @GetMapping("/")
     public String index() {
-        return "Hello World (V2)";
+        return """
+                <div style='text-align: center;'>
+                	<h1 >Hello World (V3)</h1>
+                	<p>Welcome to the world of automation</p>
+                </div>
+                """;
     }
 
     @GetMapping("health")
     public Health health() {
-        return  new Health("OK", "This is a fake Health end point");
+        return new Health("OK", "This is a fake Health end point");
     }
 }
