@@ -1,7 +1,11 @@
 package test.cicd.helloworld;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.net.URI;
 
 @RestController
 public class RouteController {
@@ -17,9 +21,9 @@ public class RouteController {
                 """;
     }
 
-    @GetMapping("health")
-    public String health() {
-        return "<meta http-equiv='refresh' content='0;url=/actuator' />";
 
+    @GetMapping("health")
+    public ResponseEntity<Void> redirect(){
+        return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("/actuator?redirect=true")).build();
     }
 }
